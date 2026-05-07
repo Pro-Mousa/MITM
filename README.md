@@ -75,7 +75,7 @@ sudo python3 arp_poison.py --target &lt;target_ip&gt; --gateway &lt;gateway_ip&g
 <h2>🧪 Example</h2>
 
 <pre>
-sudo python3 arp_poison.py -t 192.168.1.5 -g 192.168.1.1
+sudo python3 arp_poison.py -t 192.168.1.3 -g 192.168.1.1
 </pre>
 
 ---
@@ -157,7 +157,7 @@ Do not use this tool on networks or systems without explicit permission.
 <h2>📬 Contributing</h2>
 
 <p>
-Feel free to fork this repository and submit pull requests to improve the project.
+Feel free to fork this repository and submit pull requests to improve the Project.
 </p>
 
 ---
@@ -165,7 +165,7 @@ Feel free to fork this repository and submit pull requests to improve the projec
 <h2>📜 License</h2>
 
 <p>
-This project is licensed under the MIT License.<br>
+This Project is licensed under the MIT License.<br>
 @Pro-Mousa<br>
 © 2026
 </p>
