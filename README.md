@@ -70,9 +70,6 @@ or
 
 sudo python3 arp_poison.py --target &lt;target_ip&gt; --gateway &lt;gateway_ip&gt;
 </pre>
-
-<h3>Using Python (default)</h3>
-
 ---
 
 <h2>🧪 Example</h2>
