@@ -172,5 +172,5 @@ This project is licensed under the MIT License.<br>
 
 <!-- Footer -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&height=100&color=0:232526,100:414345&section=footer" alt="footer" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&height=100&color=0:1F1C2C,100:928DAB&section=footer" alt="footer" />
 </p>
